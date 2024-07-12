@@ -18,8 +18,8 @@ export default function Landing() {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <Image
         source={require("./../assets/Images/places.jpg")}
-        style={{ width: "100%", height: 480 ,objectFit:'fill'}}
-      ></Image>
+        style={styles.headerImage}
+      />
       <View style={styles.box}>
         <Text style={styles.title}>TripWiz</Text>
         <Text style={styles.text}>
@@ -27,35 +27,37 @@ export default function Landing() {
           Get smart recommendations and seamless itineraries tailored to you.
         </Text>
         <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Login");
-          }}
+          style={styles.button}
+          onPress={() => navigation.navigate("Login")}
         >
-          <View style={styles.button}>
-            <Text
-              style={{ color: "#ffffff", fontSize: 22, alignContent: "center" }}
-            >
-              Get Started
-            </Text>
-          </View>
+          <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
-        <Image source={require("./../assets/Images/plane.png")}
-        style={styles.image}></Image>
+        <Image
+          source={require("./../assets/Images/plane.png")}
+          style={styles.image}
+        />
       </View>
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: "center",
+    backgroundColor: "#fff",
   },
-
-  box: {
-    height: "100%",
+  headerImage: {
     width: "100%",
-    marginTop: -30,
-    borderTopLeftRadius: 38,
-    borderTopRightRadius: 38,
+    height: 480,
+    resizeMode: "fill",
+  },
+  box: {
+    flex: 1,
+    width: "100%",
+    marginTop: -33,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
     backgroundColor: "#ffffff",
     padding: 15,
     alignItems: "center",
@@ -73,24 +75,28 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   button: {
-    padding: 10,
     backgroundColor: "#000",
-    height: 55,
-    borderRadius: 99,
     width: 300,
-    marginTop: "25%",
-    flexDirection: "row",
-
+    height: 60,
+    padding: 10,
+    borderRadius: 50,
+    alignItems: "center",
     justifyContent: "center",
+    marginTop: 50,
+  },
+  buttonText: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontFamily: "Medium",
   },
   image: {
     height: 200,
     width: 300,
-    marginTop:-50,
-    resizeMode: 'contain',
+    marginTop: -40,
+    resizeMode: "contain",
     opacity: 0.65,
-    transform: [{ rotate: '-15deg' }],
-    alignSelf:'flex-start',
+    transform: [{ rotate: "-15deg" }],
+    alignSelf: "flex-start",
     marginLeft: -70,
   },
 });

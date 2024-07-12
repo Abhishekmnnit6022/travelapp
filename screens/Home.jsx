@@ -1,6 +1,6 @@
 import { View, Text ,TouchableOpacity} from 'react-native'
 import React from 'react'
- import Tabnavigation from '../navigation/Tabnavigation';
+import TabNavigation from './../navigation/Tabnavigation';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState, useEffect } from 'react';
@@ -20,7 +20,7 @@ const removeUserData = async () => {
 export default function Home() {
   const navigation=useNavigation();
   const [user, setUser] = useState(null);
-
+  
 
   
   useEffect(() => {
@@ -48,11 +48,14 @@ export default function Home() {
   };
 
   return (
-    <View style={{justifyContent:'center',alignItems:'center'}}>
-      <Text>home</Text>
-      <TouchableOpacity onPress={handleLogout} >
+     
+    <View style={{flex:1}}>
+      <TabNavigation/>
+     
+     
+      {/* <TouchableOpacity onPress={handleLogout} >
         <Text>Log out</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   )
 }

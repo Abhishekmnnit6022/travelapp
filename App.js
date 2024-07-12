@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import React, { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import Stacknavigation from './navigation/Stacknavigation';
+import TabNavigation from './navigation/Tabnavigation';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -36,6 +37,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Stacknavigation/>
+     
     </View>
   );
 }
